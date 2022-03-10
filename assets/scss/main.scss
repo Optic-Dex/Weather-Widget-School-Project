@@ -1,0 +1,179 @@
+* {
+margin: 0;
+padding: 0;
+text-decoration: none;
+list-style: none;
+user-select: none;
+user-drag: none;
+}
+@import './helper/variables';
+@import './helper/mixin';
+@import './helper/placeholder';
+@import './helper/extend';
+@import './helper/grid';
+@import './helper/nav';
+@import './helper/footer';
+@import './helper/animation';
+
+body {
+    max-width: 1920px;
+    margin: auto auto;
+    #main-svg {
+        position: absolute;
+        z-index: -9999;
+    }
+
+    #weather-widget {
+        position: relative;
+        margin: auto;
+        border: 3px solid black;
+        box-shadow: 2px 2px 4px 1px black;
+        background-image: url(../img/dawn.jpg);
+        background-size: 100% 100%;
+        width: 1000px;
+        height: 500px;
+        #side {
+            text-align: center;
+            backdrop-filter: blur(8px);
+            width: 150px;
+            height: 500px;
+            overflow: scroll;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+        #info {
+            z-index: 1;
+            position: absolute;
+            top: 13%;
+            right: 12%;
+            backdrop-filter: blur(8px);
+            width: 600px;
+            height: 350px;
+                #scrollbar {
+                    position: absolute;
+                    width: 450px;
+                z-index: 2;
+                 img {
+                width: 450px;
+                -webkit-user-drag: none;
+                -khtml-user-drag: none;
+                -moz-user-drag: none;
+                -o-user-drag: none;
+            }}
+            
+
+            #scrollbox {
+
+                position: absolute;
+                top: -10px;
+                left: -5px;
+                background-color: black;
+                width: 10px;
+                height: 20px;
+
+            }
+            #timeline {
+                margin-top: 40px;
+                margin-left: 5px;
+            }
+        }
+
+
+
+
+    }
+
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f12f; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(99, 99, 99); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(35, 35, 35); 
+  }
+//svg css
+//----------------------------------------------------------------------
+.cls-1{
+    fill:#fcee21;
+}
+
+.cls-1,.cls-10,.cls-2,.cls-3,.cls-4,.cls-6,.cls-7,.cls-8,.cls-9{
+    stroke:#000;
+}
+
+.cls-1,.cls-10,.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{
+    stroke-miterlimit:10;
+}
+
+.cls-1,.cls-2,.cls-3,.cls-4,.cls-5{
+    stroke-width:2px;
+}
+
+.cls-2,.cls-8,.cls-9{
+    fill:rgb(255, 255, 255);
+}
+
+.cls-10,.cls-3,.cls-5{
+    fill:none;
+}
+
+.cls-4{
+    fill:#e8d100;
+}
+
+.cls-5{
+    stroke:#1d1d1b;
+}
+
+.cls-6{
+    fill:red;
+    stroke-width:3px;
+}
+
+.cls-10,.cls-9{
+    stroke-width:4px;
+}
+ #icon_temperatur {
+     width: 50%;
+ }
+ #current-weather-icon {
+    width: 50%;
+}
+.weather-icon {
+    width: 50%;
+}
+.weather-info-icon {
+    width: 35%;
+}
+ #sun-2{
+  animation: rotat 5s linear infinite;
+ transform-origin: center;
+ transform-box: fill-box;
+ }
+#sun {
+    animation: rotat 5s linear infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+ @keyframes rotat {
+     from {
+         transform: rotate(0deg);
+
+     }
+     to {
+         transform: rotate(360deg)
+     }
+ }
+
